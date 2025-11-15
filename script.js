@@ -105,29 +105,166 @@ setInterval(() => {
     showSlide(currentSlide);
 }, 5000);
 
-// Form Submission
+// Form Submission - Enhanced Lead Generation
 const contactForm = document.getElementById('contactForm');
 
-contactForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    
-    // Get form values
-    const formData = {
-        name: document.getElementById('name').value,
-        email: document.getElementById('email').value,
-        phone: document.getElementById('phone').value,
-        interest: document.getElementById('interest').value,
-        message: document.getElementById('message').value
-    };
+if (contactForm) {
+    contactForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        
+        // Get form values
+        const formData = {
+            name: document.getElementById('name').value,
+            email: document.getElementById('email').value,
+            phone: document.getElementById('phone').value,
+            interest: document.getElementById('interest').value,
+            message: document.getElementById('message').value,
+            newsletter: document.getElementById('newsletter').checked,
+            timestamp: new Date().toISOString(),
+            source: 'contact_form'
+        };
 
-    // Here you would typically send the data to a server
-    console.log('Form submitted:', formData);
+        // Here you would typically send the data to a server/CRM
+        // Example: fetch('/api/leads', { method: 'POST', body: JSON.stringify(formData) })
+        console.log('Lead captured:', formData);
+        
+        // Store in localStorage as backup
+        const leads = JSON.parse(localStorage.getItem('leads') || '[]');
+        leads.push(formData);
+        localStorage.setItem('leads', JSON.stringify(leads));
+        
+        // Show success message
+        showSuccessMessage('Thank you for your interest! Our team will contact you within 24 hours.');
+        
+        // Reset form
+        contactForm.reset();
+        
+        // Scroll to top
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+}
+
+// Quick Lead Form (Modal)
+const quickLeadForm = document.getElementById('quickLeadForm');
+if (quickLeadForm) {
+    quickLeadForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        
+        const inputs = quickLeadForm.querySelectorAll('input');
+        const leadData = {
+            name: inputs[0].value,
+            phone: inputs[1].value,
+            email: inputs[2].value,
+            timestamp: new Date().toISOString(),
+            source: 'quick_lead_modal'
+        };
+        
+        console.log('Quick lead captured:', leadData);
+        
+        // Store lead
+        const leads = JSON.parse(localStorage.getItem('leads') || '[]');
+        leads.push(leadData);
+        localStorage.setItem('leads', JSON.stringify(leads));
+        
+        // Close modal
+        closeModal();
+        
+        // Show success
+        showSuccessMessage('Thank you! Your free consultation session has been reserved. We\'ll contact you shortly.');
+    });
+}
+
+// Modal Functionality
+const leadModal = document.getElementById('leadModal');
+const modalClose = document.getElementById('modalClose');
+
+function openModal() {
+    if (leadModal) {
+        leadModal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+}
+
+function closeModal() {
+    if (leadModal) {
+        leadModal.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+}
+
+if (modalClose) {
+    modalClose.addEventListener('click', closeModal);
+}
+
+if (leadModal) {
+    leadModal.addEventListener('click', (e) => {
+        if (e.target === leadModal) {
+            closeModal();
+        }
+    });
+}
+
+// Show modal after user scrolls 50% of page (lead generation strategy)
+let modalShown = false;
+window.addEventListener('scroll', () => {
+    const scrollPercent = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
     
-    // Show success message
-    alert('Thank you for your interest! We will contact you soon.');
+    if (scrollPercent > 50 && !modalShown && leadModal) {
+        // Check if user hasn't seen modal in this session
+        if (!sessionStorage.getItem('modalShown')) {
+            setTimeout(() => {
+                openModal();
+                modalShown = true;
+                sessionStorage.setItem('modalShown', 'true');
+            }, 2000); // Show after 2 seconds of being at 50% scroll
+        }
+    }
+});
+
+// Success Message Function
+function showSuccessMessage(message) {
+    const successDiv = document.createElement('div');
+    successDiv.className = 'success-message';
+    successDiv.textContent = message;
+    successDiv.style.cssText = `
+        position: fixed;
+        top: 100px;
+        right: 20px;
+        background: var(--gradient);
+        color: white;
+        padding: 1.5rem 2rem;
+        border-radius: 10px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        z-index: 10001;
+        animation: slideInRight 0.5s ease;
+        max-width: 400px;
+    `;
     
-    // Reset form
-    contactForm.reset();
+    document.body.appendChild(successDiv);
+    
+    setTimeout(() => {
+        successDiv.style.animation = 'slideOutRight 0.5s ease';
+        setTimeout(() => {
+            document.body.removeChild(successDiv);
+        }, 500);
+    }, 5000);
+}
+
+// Track CTA Button Clicks (Analytics)
+document.querySelectorAll('.btn-primary, .btn-secondary, .program-cta, .floating-cta-btn').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+        const ctaData = {
+            buttonText: btn.textContent.trim(),
+            buttonLocation: btn.closest('section')?.id || 'unknown',
+            timestamp: new Date().toISOString()
+        };
+        console.log('CTA clicked:', ctaData);
+        
+        // Store for analytics
+        const ctaClicks = JSON.parse(localStorage.getItem('ctaClicks') || '[]');
+        ctaClicks.push(ctaData);
+        localStorage.setItem('ctaClicks', JSON.stringify(ctaClicks));
+    });
 });
 
 // Scroll Animations
@@ -146,7 +283,7 @@ const fadeInObserver = new IntersectionObserver((entries) => {
 }, observerOptions);
 
 // Apply fade-in animation to sections
-document.querySelectorAll('.feature-card, .program-card, .about-text, .certification-text').forEach(el => {
+document.querySelectorAll('.feature-card, .program-card, .about-text, .certification-text, .frozen-text').forEach(el => {
     el.style.opacity = '0';
     el.style.transform = 'translateY(30px)';
     el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';

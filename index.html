@@ -15,14 +15,18 @@
         <div class="container">
             <div class="nav-wrapper">
                 <div class="logo">
-                    <h1>Kitchenette</h1>
+                    <a href="#home">
+                        <img src="logo.png" alt="Kitchenette Logo" class="logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                        <h1 class="logo-text" style="display: none;">Kitchenette</h1>
+                    </a>
                 </div>
                 <ul class="nav-menu" id="navMenu">
                     <li><a href="#home">Home</a></li>
                     <li><a href="#about">About</a></li>
                     <li><a href="#programs">Programs</a></li>
+                    <li><a href="#frozen-products">Frozen Products</a></li>
                     <li><a href="#certification">Certification</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#contact" class="nav-cta">Get Started</a></li>
                 </ul>
                 <div class="hamburger" id="hamburger">
                     <span></span>
@@ -41,12 +45,13 @@
                 <div class="hero-badge">
                     <span>CTEVT Certified</span>
                 </div>
-                <h1 class="hero-title">State-of-the-Art<br>Bakery Training</h1>
-                <p class="hero-subtitle">Master the art of baking with professional training from industry experts. Transform your passion into a certified career.</p>
+                <h1 class="hero-title">State-of-the-Art<br>Bakery Training & Manufacturing</h1>
+                <p class="hero-subtitle">Master the art of baking with CTEVT-certified professional training. Plus, explore our premium frozen products manufacturing division. Transform your passion into a certified career.</p>
                 <div class="hero-buttons">
-                    <a href="#contact" class="btn btn-primary">Enroll Now</a>
-                    <a href="#programs" class="btn btn-secondary">Learn More</a>
+                    <a href="#contact" class="btn btn-primary cta-primary">Get Free Consultation</a>
+                    <a href="#programs" class="btn btn-secondary">Explore Programs</a>
                 </div>
+                <p class="hero-cta-note">🎁 Limited Time: Free Career Counseling Session</p>
             </div>
         </div>
         <div class="scroll-indicator">
@@ -79,6 +84,19 @@
                     <h3>Career Support</h3>
                     <p>Get guidance and support to launch your career in the baking industry</p>
                 </div>
+                <div class="feature-card">
+                    <div class="feature-icon">❄️</div>
+                    <h3>Frozen Products</h3>
+                    <p>State-of-the-art manufacturing facility for premium frozen bakery products</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🏭</div>
+                    <h3>Industry Partnership</h3>
+                    <p>Direct exposure to commercial production and manufacturing processes</p>
+                </div>
+            </div>
+            <div class="features-cta">
+                <a href="#contact" class="btn btn-primary">Start Your Journey Today</a>
             </div>
         </div>
     </section>
@@ -128,34 +146,97 @@
             </div>
             <div class="programs-grid">
                 <div class="program-card">
-                    <div class="program-icon">🍞</div>
-                    <h3>Bread Making</h3>
-                    <p>Master the fundamentals of bread making, from basic loaves to artisan specialties</p>
+                    <div class="program-icon">🎓</div>
+                    <h3>Foundational Baking</h3>
+                    <p>Build a strong foundation in baking with comprehensive training covering essential techniques, ingredients, and fundamental skills needed to start your baking journey.</p>
                     <ul class="program-features">
-                        <li>Yeast & Sourdough Techniques</li>
-                        <li>Artisan Bread Varieties</li>
+                        <li>Basic Baking Principles</li>
+                        <li>Essential Techniques & Methods</li>
+                        <li>Ingredient Knowledge</li>
+                        <li>Foundation Recipes</li>
+                        <li>Kitchen Safety & Hygiene</li>
+                    </ul>
+                    <a href="#contact" class="program-cta">Enroll Now</a>
+                </div>
+                <div class="program-card">
+                    <div class="program-icon">👨‍🍳</div>
+                    <h3>Professional Baking</h3>
+                    <p>Advance your skills to professional level with advanced techniques, commercial production methods, and industry-standard practices for a successful baking career.</p>
+                    <ul class="program-features">
+                        <li>Advanced Baking Techniques</li>
                         <li>Commercial Production</li>
+                        <li>Artisan & Specialty Products</li>
+                        <li>Business & Entrepreneurship</li>
+                        <li>Industry Standards & Practices</li>
                     </ul>
+                    <a href="#contact" class="program-cta">Enroll Now</a>
                 </div>
-                <div class="program-card">
-                    <div class="program-icon">🎂</div>
-                    <h3>Pastry & Confectionery</h3>
-                    <p>Create exquisite pastries, cakes, and confections with professional techniques</p>
-                    <ul class="program-features">
-                        <li>French Pastry Techniques</li>
-                        <li>Cake Decorating</li>
-                        <li>Chocolate Work</li>
-                    </ul>
+            </div>
+            <div class="programs-cta-section">
+                <h3>Ready to Start Your Baking Career?</h3>
+                <p>Join hundreds of successful graduates who transformed their passion into profession</p>
+                <a href="#contact" class="btn btn-primary btn-large">Get Started Today - Free Consultation</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Frozen Products Section -->
+    <section id="frozen-products" class="frozen-products">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Frozen Products Manufacturing</h2>
+                <p class="section-subtitle">Premium Quality Frozen Bakery Products</p>
+            </div>
+            <div class="frozen-content">
+                <div class="frozen-text">
+                    <h3>State-of-the-Art Manufacturing Facility</h3>
+                    <p>Kitchenette is not just a training institute—we're also a leading manufacturer of premium frozen bakery products. Our state-of-the-art facility combines traditional baking excellence with modern freezing technology to deliver products that maintain freshness, flavor, and quality.</p>
+                    <div class="frozen-benefits">
+                        <div class="benefit-item">
+                            <span class="checkmark">✓</span>
+                            <span>Premium Quality Ingredients</span>
+                        </div>
+                        <div class="benefit-item">
+                            <span class="checkmark">✓</span>
+                            <span>Advanced Freezing Technology</span>
+                        </div>
+                        <div class="benefit-item">
+                            <span class="checkmark">✓</span>
+                            <span>Hygienic Production Standards</span>
+                        </div>
+                        <div class="benefit-item">
+                            <span class="checkmark">✓</span>
+                            <span>Wide Range of Products</span>
+                        </div>
+                        <div class="benefit-item">
+                            <span class="checkmark">✓</span>
+                            <span>Bulk Order Support</span>
+                        </div>
+                        <div class="benefit-item">
+                            <span class="checkmark">✓</span>
+                            <span>Consistent Quality Assurance</span>
+                        </div>
+                    </div>
+                    <div class="frozen-products-list">
+                        <h4>Our Product Range:</h4>
+                        <div class="products-grid">
+                            <div class="product-item">Frozen Breads</div>
+                            <div class="product-item">Frozen Pastries</div>
+                            <div class="product-item">Frozen Cakes</div>
+                            <div class="product-item">Frozen Dough</div>
+                            <div class="product-item">Frozen Cookies</div>
+                            <div class="product-item">Custom Products</div>
+                        </div>
+                    </div>
+                    <div class="frozen-cta">
+                        <a href="#contact" class="btn btn-primary">Request Product Catalog</a>
+                        <a href="#contact" class="btn btn-secondary">Become a Distributor</a>
+                    </div>
                 </div>
-                <div class="program-card">
-                    <div class="program-icon">🥐</div>
-                    <h3>Advanced Techniques</h3>
-                    <p>Elevate your skills with advanced baking methods and modern innovations</p>
-                    <ul class="program-features">
-                        <li>Molecular Gastronomy</li>
-                        <li>Specialty Diets</li>
-                        <li>Business Management</li>
-                    </ul>
+                <div class="frozen-image">
+                    <div class="image-placeholder">
+                        <span>Frozen Products Manufacturing</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -191,6 +272,9 @@
                             <span class="checkmark">✓</span>
                             <span>Professional Credibility</span>
                         </div>
+                    </div>
+                    <div class="cert-cta">
+                        <a href="#contact" class="btn btn-primary">Get Certified Today</a>
                     </div>
                 </div>
             </div>
@@ -267,7 +351,7 @@
                         <div class="info-icon">📍</div>
                         <div>
                             <h4>Address</h4>
-                            <p>Visit us at our training facility</p>
+                            <p><a href="https://maps.app.goo.gl/5cogZdsmZJ43nfjZA" target="_blank" rel="noopener noreferrer" class="info-link">View on Google Maps</a></p>
                         </div>
                     </div>
                     <div class="info-item">
@@ -284,6 +368,18 @@
                             <p>info@kitchenette.edu.np</p>
                         </div>
                     </div>
+                    <div class="info-item">
+                        <div class="info-icon">🌐</div>
+                        <div>
+                            <h4>Follow Us</h4>
+                            <div class="contact-social-links">
+                                <a href="https://www.facebook.com/profile.php?id=61560570583295" target="_blank" rel="noopener noreferrer" aria-label="Facebook">Facebook</a>
+                                <a href="https://www.instagram.com/thekitchenette.np?igsh=dTN2dnlnY294ajN2" target="_blank" rel="noopener noreferrer" aria-label="Instagram">Instagram</a>
+                                <a href="https://www.youtube.com/@TheKitchenetteNepal" target="_blank" rel="noopener noreferrer" aria-label="YouTube">YouTube</a>
+                                <a href="https://www.tiktok.com/@thekitchenette.np" target="_blank" rel="noopener noreferrer" aria-label="TikTok">TikTok</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <form class="contact-form" id="contactForm">
                     <div class="form-group">
@@ -297,17 +393,25 @@
                     </div>
                     <div class="form-group">
                         <select id="interest" name="interest" required>
-                            <option value="">Select Program Interest</option>
-                            <option value="bread">Bread Making</option>
-                            <option value="pastry">Pastry & Confectionery</option>
-                            <option value="advanced">Advanced Techniques</option>
-                            <option value="all">All Programs</option>
+                            <option value="">Select Your Interest</option>
+                            <option value="foundational">Foundational Baking</option>
+                            <option value="professional">Professional Baking</option>
+                            <option value="both">Both Programs</option>
+                            <option value="frozen">Frozen Products (B2B)</option>
+                            <option value="distributor">Become a Distributor</option>
                         </select>
                     </div>
                     <div class="form-group">
-                        <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
+                        <textarea id="message" name="message" placeholder="Tell us about your goals and how we can help you..." rows="5" required></textarea>
                     </div>
-                    <button type="submit" class="btn btn-primary">Send Message</button>
+                    <div class="form-group checkbox-group">
+                        <label>
+                            <input type="checkbox" name="newsletter" id="newsletter">
+                            <span>I'd like to receive updates about new programs and offers</span>
+                        </label>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-large">Get Free Consultation Now</button>
+                    <p class="form-note">🔒 Your information is secure. We'll contact you within 24 hours.</p>
                 </form>
             </div>
         </div>
@@ -333,17 +437,33 @@
                 <div class="footer-section">
                     <h4>Programs</h4>
                     <ul>
-                        <li><a href="#programs">Bread Making</a></li>
-                        <li><a href="#programs">Pastry & Confectionery</a></li>
-                        <li><a href="#programs">Advanced Techniques</a></li>
+                        <li><a href="#programs">Foundational Baking</a></li>
+                        <li><a href="#programs">Professional Baking</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
-                    <h4>Connect</h4>
+                    <h4>Connect With Us</h4>
                     <div class="social-links">
-                        <a href="#" aria-label="Facebook">📘</a>
-                        <a href="#" aria-label="Instagram">📷</a>
-                        <a href="#" aria-label="YouTube">📺</a>
+                        <a href="https://www.facebook.com/profile.php?id=61560570583295" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                            <span class="social-icon">📘</span>
+                            <span class="social-text">Facebook</span>
+                        </a>
+                        <a href="https://www.instagram.com/thekitchenette.np?igsh=dTN2dnlnY294ajN2" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                            <span class="social-icon">📷</span>
+                            <span class="social-text">Instagram</span>
+                        </a>
+                        <a href="https://www.youtube.com/@TheKitchenetteNepal" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+                            <span class="social-icon">📺</span>
+                            <span class="social-text">YouTube</span>
+                        </a>
+                        <a href="https://www.tiktok.com/@thekitchenette.np" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+                            <span class="social-icon">🎵</span>
+                            <span class="social-text">TikTok</span>
+                        </a>
+                        <a href="https://maps.app.goo.gl/5cogZdsmZJ43nfjZA" target="_blank" rel="noopener noreferrer" aria-label="Google Maps Location">
+                            <span class="social-icon">📍</span>
+                            <span class="social-text">Location</span>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -352,6 +472,35 @@
             </div>
         </div>
     </footer>
+
+    <!-- Floating CTA Button -->
+    <div class="floating-cta" id="floatingCta">
+        <a href="#contact" class="floating-cta-btn">
+            <span>📞</span>
+            <span>Get Free Consultation</span>
+        </a>
+    </div>
+
+    <!-- Lead Capture Modal -->
+    <div class="modal" id="leadModal">
+        <div class="modal-content">
+            <span class="modal-close" id="modalClose">&times;</span>
+            <h2>🎁 Special Offer!</h2>
+            <p>Get a <strong>FREE Career Counseling Session</strong> when you enroll this month!</p>
+            <form class="quick-lead-form" id="quickLeadForm">
+                <div class="form-group">
+                    <input type="text" placeholder="Your Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="tel" placeholder="Phone Number" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" placeholder="Email Address" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Claim Free Session</button>
+            </form>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>
